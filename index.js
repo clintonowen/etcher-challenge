@@ -3,15 +3,14 @@
 
 // Add Event Listeners here:
 function handleCellHover() {
-  $('.cell').hover(function() {
+  $('.grid').on('mouseenter', '.cell', (function() {
     $(this).addClass('active');
-  });
+  }));
 }
 
 function handleRedraw() {
   $('.controls').find('button').click(function() {
     createAndPlaceRows(8);
-    handleCellHover();
   });
 }
 
