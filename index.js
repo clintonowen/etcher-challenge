@@ -2,13 +2,26 @@
 /* global $ */
 
 // Add Event Listeners here:
+function handleCellHover() {
+  $('.cell').hover(function() {
+    $(this).addClass('active');
+  });
+}
 
+function handleRedraw() {
+  $('.controls').find('button').click(function() {
+    createAndPlaceRows(8);
+    handleCellHover();
+  });
+}
 
 // When DOM is ready:
 $(() => {
   createAndPlaceRows(8);
 
   // Bind your event listeners here:
+  handleCellHover();
+  handleRedraw();
 });
 
 
